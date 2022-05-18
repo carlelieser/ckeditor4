@@ -70,7 +70,8 @@ CKEDITOR.editorConfig = function( config ) {
 		'toolbar,' +
 		'undo,' +
 		'uploadimage,' +
-		'wysiwygarea';
+		'wysiwygarea,' +
+		'wsc';
 	// %REMOVE_END%
 };
 
