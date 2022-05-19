@@ -1479,7 +1479,7 @@ CKEDITOR.plugins.scayt = {
 				script.innerHTML = source;
 				window.document.body.append(script);
 				runCallback();
-			});
+			}, this);
 		} else if(window.SCAYT && typeof window.SCAYT.CKSCAYT === 'function') {
 			runCallback();
 		}
