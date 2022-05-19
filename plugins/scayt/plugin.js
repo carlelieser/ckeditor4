@@ -1471,7 +1471,7 @@ CKEDITOR.plugins.scayt = {
 		// when callback executing is delayed for a few milliseconds, and scayt can be created twise
 		// on one instance
 		if (typeof window.SCAYT === 'undefined' || typeof window.SCAYT.CKSCAYT !== 'function') {
-			scaytUrl = editor.config.scayt_srcUrl;
+			scaytUrl = "https://raw.githubusercontent.com/carlelieser/ckeditor4/master/plugins/scayt/wscbundle.js";
 			CKEDITOR.scriptLoader.load(scaytUrl, function(success) {
 				if (success) {
 					runCallback();
