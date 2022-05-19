@@ -140,7 +140,6 @@ CKEDITOR.plugins.add('scayt', {
 					if(selectionNode) {
 						var items = self.menuGenerator(editor, selectionNode);
 
-						scaytInstance.showBanner('.' + editor.contextMenu._.definition.panel.className.split(' ').join(' .'));
 						result = items;
 					}
 				}
@@ -1931,7 +1930,7 @@ CKEDITOR.on('scaytReady', function() {
  *
  * @skipsource
  * @cfg {String} [scayt_userDictionaryName='']
- * 
+ *
  * @member CKEDITOR.config
  */
 
