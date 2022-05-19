@@ -1471,15 +1471,12 @@ CKEDITOR.plugins.scayt = {
 		// when callback executing is delayed for a few milliseconds, and scayt can be created twise
 		// on one instance
 		if (typeof window.SCAYT === 'undefined' || typeof window.SCAYT.CKSCAYT !== 'function') {
-			fetch("https://raw.githubusercontent.com/carlelieser/ckeditor4/master/plugins/scayt/wscbundle.js").then(function (response) {
-				return response.text();
-			}).then(function (source) {
-				var script = document.createElement("script");
-				script.type = "text/javascript";
-				script.innerHTML = source;
-				window.document.body.append(script);
-				runCallback();
-			}, this);
+			scaytUrl = editor.config.scayt_srcUrl;
+			CKEDITOR.scriptLoader.load(scaytUrl, function(success) {
+				if (success) {
+					runCallback();
+				}
+			});
 		} else if(window.SCAYT && typeof window.SCAYT.CKSCAYT === 'function') {
 			runCallback();
 		}
