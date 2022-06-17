@@ -1324,6 +1324,9 @@
 		}
 
 		function stateFromNamedCommand( command ) {
+			
+			if (editor.status == 'destroyed') return CKEDITOR.TRISTATE_DISABLED;
+			
 			var selection = editor.getSelection(),
 				range = selection && selection.getRanges()[ 0 ],
 				// We need to correctly update toolbar states on readOnly (#2775).
